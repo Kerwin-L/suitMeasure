@@ -70,23 +70,23 @@
                             {
                                 index: 'organizationTree',
                                 title: '机构管理'
-                            }, 
+                            },
                             {
                                 index: 'sysUser',
                                 title: '用户管理'
-                            }, 
+                            },
                             {
                                 index: 'sysRole',
                                 title: '角色管理'
-                            }, 
+                            },
                             {
                                 index: 'sysAcl',
                                 title: '角色资源管理'
-                            }, 
+                            },
                             {
                                 index: 'sysResource',
                                 title: '资源管理'
-                            }, 
+                            },
                             {
                                 index: 'sysMenu',
                                 title: '菜单管理'

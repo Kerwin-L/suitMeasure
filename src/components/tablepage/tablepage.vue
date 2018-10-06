@@ -14,18 +14,6 @@
             <el-form-item label="审批人">
                 <el-input v-model="formSearch.user" placeholder="审批人"></el-input>
             </el-form-item>
-            <el-form-item label="审批人">
-                <el-input v-model="formSearch.user" placeholder="审批人"></el-input>
-            </el-form-item>
-            <el-form-item label="审批人">
-                <el-input v-model="formSearch.user" placeholder="审批人"></el-input>
-            </el-form-item>
-            <el-form-item label="审批人">
-                <el-input v-model="formSearch.user" placeholder="审批人"></el-input>
-            </el-form-item>
-            <el-form-item label="审批人">
-                <el-input v-model="formSearch.user" placeholder="审批人"></el-input>
-            </el-form-item>
             <el-form-item label=" ">
                 <el-button type="primary" @click="onSubmit">查询</el-button>
             </el-form-item>
@@ -42,11 +30,15 @@
             <el-table-column type="selection" width="55">
             </el-table-column>
 
-            <el-table-column prop="date" label="日期" width="180" sortable>
+            <el-table-column prop="billId" label="订单号" width="180" sortable>
             </el-table-column>
-            <el-table-column prop="name" label="姓名" width="180" sortable>
+            <el-table-column prop="MeasureType" label="量体类型" width="180" sortable>
             </el-table-column>
-            <el-table-column prop="address" label="地址">
+            <el-table-column prop="name" label="联系人" width="180" sortable>
+            </el-table-column>
+            <el-table-column prop="date" label="量体日期" width="180" sortable>
+            </el-table-column>
+            <el-table-column prop="address" label="量体地址">
             </el-table-column>
             <el-table-column label="操作" fixed="right" min-width="180">
                 <template slot-scope="scope">
@@ -141,26 +133,30 @@ export default {
                 pageTotal: 80
             },
             tableData: [
-                {   id:"1",
+                {   billId:"1",
                     date: "2016-05-02",
+                    MeasureType: "衬衫",
                     name: "李紫婷",
                     address: "上海市普陀区金沙江路 1518 弄"
                 },
                 {
-                     id:"2",
+                    billId:"2",
                     date: "2016-05-04",
+                    MeasureType: "衬衫",
                     name: "杨超越",
                     address: "上海市普陀区金沙江路 1517 弄"
                 },
                 {
-                     id:"3",
+                    billId:"3",
                     date: "2016-05-01",
+                    MeasureType: "衬衫",
                     name: "赖小七",
                     address: "上海市普陀区金沙江路 1519 弄"
                 },
                 {
-                     id:"4",
+                    billId:"4",
                     date: "2016-05-03",
+                    MeasureType: "衬衫",
                     name: "张紫宁",
                     address: "上海市普陀区金沙江路 1516 弄"
                 }
@@ -203,13 +199,15 @@ export default {
     },
     methods: {
         handleEdit(index, rowData) {
-            var msg = "索引是:" + index + ",行内容是:" + JSON.stringify(rowData);
-            this.$message({
-                message: msg,
-                type: "success"
-            });
-            this.formEdit=rowData;
-            this.dialogFormVisible = true;
+          console.log(this.$router);
+          this.$router.push({ path: '/formpage'});
+            // var msg = "索引是:" + index + ",行内容是:" + JSON.stringify(rowData);
+            // this.$message({
+            //     message: msg,
+            //     type: "success"
+            // });
+            // this.formEdit=rowData;
+            // this.dialogFormVisible = true;
         },
         handleDelete(index, rowData) {
             var msg = "索引是:" + index + ",行内容是:" + JSON.stringify(rowData);

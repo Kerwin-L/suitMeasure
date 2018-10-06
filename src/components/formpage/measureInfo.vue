@@ -5,7 +5,7 @@
         <!-- 查询区----start -->
         <!-- 查询区----end -->
         纵向单列表单(含验证):
-        <div class="container suit_style">
+        <div class="container suit_style" style="width: 660px;">
             <el-form :label-position="labelPosition" :rules="rules" ref="suit_style" :label-width="labelWidth" :inline="false" :model="suit_style" class="demo-form-inline">
 
                 <el-form-item label="纽扣颜色" prop="fastenerColor">
