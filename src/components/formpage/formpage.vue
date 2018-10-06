@@ -1,10 +1,5 @@
 <template >
     <div>
-
-        横向表单:
-        <!-- 查询区----start -->
-        <!-- 查询区----end -->
-        纵向单列表单(含验证):
         <div class="container suit_style">
             <el-form :label-position="labelPosition" :rules="rules" ref="suit_style" :label-width="labelWidth" :inline="false" :model="suit_style" class="demo-form-inline">
 

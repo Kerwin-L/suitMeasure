@@ -18,11 +18,17 @@
                 <!-- <v-searchinput></v-searchinput> -->
             </el-tab-pane>
             <el-tab-pane label="量体数据">
-                <measureInfo></measureInfo>
+              <measureInfo></measureInfo>
+              </el-tab-pane>
+            <el-tab-pane label="特体数据（非必填）">
+
             </el-tab-pane>
-            <el-tab-pane label="特体数据（非必填）">角色管理</el-tab-pane>
-            <el-tab-pane label="刺绣内容">定时任务补偿</el-tab-pane>
-            <el-tab-pane label="客户信息">定时任务补偿</el-tab-pane>
+            <el-tab-pane label="刺绣内容">
+              <stitchwork></stitchwork>
+            </el-tab-pane>
+            <el-tab-pane label="客户信息">
+              <customerInfo></customerInfo>
+            </el-tab-pane>
         </el-tabs>
 
     </div>
@@ -35,11 +41,16 @@
 import vSearchinput from '../searchinput/searchinput.vue';
 import formpage from '../formpage/formpage.vue';
 import measureInfo from '../formpage/measureInfo.vue';
+import stitchwork from '../formpage/stitchwork.vue';
+import customerInfo from '../formpage/customerInfo.vue';
 export default {
     name: 'tabpage',
     components: {
         vSearchinput,
         formpage,
+        measureInfo,
+        stitchwork,
+        customerInfo,
     },
     data() {
         return {

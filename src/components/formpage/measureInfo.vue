@@ -1,116 +1,93 @@
 <template >
     <div>
+      纵向双列表单:
+            <!-- 查询区----start -->
+            <div class="container" style="width: 660px;">
+                <el-form :label-position="labelPosition" :rules="rules" :label-width="labelWidth" :inline="true" :model="measureInfo" class="demo-form-inline">
+                  <el-form-item label="领围测量" prop="mNeck">
+                      <el-input type="number" min="30"  v-model="measureInfo.mNeck" placeholder="范围30-60"></el-input>
+                  </el-form-item>
+                 <el-form-item label="领围成衣" prop="pNeck">
+                      <el-input type="number" min="30"  v-model="measureInfo.pNeck" placeholder=""></el-input>
+                  </el-form-item>
 
-        横向表单:
-        <!-- 查询区----start -->
-        <!-- 查询区----end -->
-        纵向单列表单(含验证):
-        <div class="container suit_style" style="width: 660px;">
-            <el-form :label-position="labelPosition" :rules="rules" ref="suit_style" :label-width="labelWidth" :inline="false" :model="suit_style" class="demo-form-inline">
+                  <el-form-item label="胸围测量" prop="mBust">
+                      <el-input type="number" min="30"  v-model="measureInfo.mBust" placeholder=""></el-input>
+                  </el-form-item>
+                 <el-form-item label="胸围成衣" prop="pBust">
+                      <el-input type="number" min="0" v-model="measureInfo.pBust" placeholder=""></el-input>
+                  </el-form-item>
 
-                <el-form-item label="纽扣颜色" prop="fastenerColor">
-                    <el-radio-group v-model="suit_style.fastenerColor">
-                        <el-radio label="白色"></el-radio>
-                        <el-radio label="黑色"></el-radio>
-                    </el-radio-group>
-                </el-form-item>
-                <el-form-item label="工艺选择" prop="processSeletion" >
-                    <el-input v-model="suit_style.processSeletion" placeholder="工艺选择" value="男式1.0"></el-input>
-                </el-form-item>
-                <el-form-item label="衬衫面料" prop="suitType">
-                    <el-input v-model="suit_style.suitType" placeholder="衬衫面料"></el-input>
-                </el-form-item>
-                <!-- <el-form-item label="数字框" prop="amount">
-                    <el-input type="number" min="0" v-model="form2.amount" placeholder="金额"></el-input>
-                </el-form-item> -->
-                <el-form-item label="领型选择" prop="collarType">
-                    <el-select v-model="suit_style.collarType" placeholder="领型">
-                        <el-option label="温莎领" value="温莎领"></el-option>
-                        <el-option label="标准领" value="标准领"></el-option>
-                        <el-option label="中八领" value="中八领"></el-option>
-                    </el-select>
-                </el-form-item>
-                <el-form-item label="袖型选择" prop="cuffType">
-                    <el-select v-model="suit_style.cuffType" placeholder="领型">
-                        <el-option label="斜角单扣" value="斜角单扣"></el-option>
-                        <el-option label="圆角单扣" value="圆角单扣"></el-option>
-                        <el-option label="斜角双扣" value="斜角双扣"></el-option>
-                    </el-select>
-                </el-form-item>
-                <el-form-item label="门襟选择" prop="topFly">
-                    <el-select v-model="suit_style.topFly" placeholder="门襟">
-                        <el-option label="明门襟" value="明门襟"></el-option>
-                        <el-option label="翻门襟" value="翻门襟"></el-option>
-                    </el-select>
-                </el-form-item>
-                <el-form-item label="下摆选择" prop="Hem">
-                    <el-select v-model="suit_style.Hem" placeholder="下摆">
-                        <el-option label="圆摆" value="圆摆"></el-option>
-                        <el-option label="平摆" value="平摆"></el-option>
-                    </el-select>
-                </el-form-item>
-                <el-form-item label="收省" prop="collectSuit">
-                    <el-select v-model="suit_style.collectSuit" placeholder="收省">
-                        <el-option label="正常" value="正常"></el-option>
-                        <el-option label="双肩活折" value="双肩活折"></el-option>
-                        <el-option label="后腰省" value="后腰省"></el-option>
-                    </el-select>
-                </el-form-item>
-                <el-form-item label="领口颜色" prop="collarColor">
-                    <el-radio-group v-model="suit_style.collarColor">
-                        <el-radio label="同身"></el-radio>
-                        <el-radio label="白色撞领袖"></el-radio>
-                    </el-radio-group>
-                </el-form-item>
-                <el-form-item label="口袋选择" prop="isPocket">
-                    <el-radio-group v-model="suit_style.isPocket">
-                        <el-radio label="无口袋"></el-radio>
-                        <el-radio label="有口袋"></el-radio>
-                    </el-radio-group>
-                </el-form-item>
-                <el-form-item label="纽扣选择" prop="fastenerType">
-                    <el-radio-group v-model="suit_style.fastenerType">
-                        <el-radio label="普通纽扣"></el-radio>
-                        <el-radio label="贝壳纽扣"></el-radio>
-                    </el-radio-group>
-                </el-form-item>
-                <el-form-item label="纽扣颜色" prop="fastenerColor">
-                    <el-radio-group v-model="suit_style.fastenerColor">
-                        <el-radio label="白色"></el-radio>
-                        <el-radio label="黑色"></el-radio>
-                    </el-radio-group>
-                </el-form-item>
+                  <el-form-item label="腰围测量" prop="mWaist">
+                      <el-input type="number" min="30" v-model="measureInfo.mWaist" placeholder=""></el-input>
+                  </el-form-item>
+                 <el-form-item label="腰围成衣" prop="pWaist">
+                      <el-input type="number" min="0" v-model="measureInfo.pWaist" placeholder=""></el-input>
+                  </el-form-item>
 
+                  <el-form-item label="肚围测量" prop="mBelly">
+                      <el-input type="number" min="30" v-model="measureInfo.mBelly" placeholder=""></el-input>
+                  </el-form-item>
+                 <el-form-item label="肚围成衣" prop="pBelly">
+                      <el-input type="number" min="0" v-model="measureInfo.pBelly" placeholder=""></el-input>
+                  </el-form-item>
 
+                  <el-form-item label="臀围测量" prop="mHipline">
+                      <el-input type="number" min="30" v-model="measureInfo.mHipline" placeholder=""></el-input>
+                  </el-form-item>
+                 <el-form-item label="臀围成衣" prop="pHipline">
+                      <el-input type="number" min="0" v-model="measureInfo.pHipline" placeholder=""></el-input>
+                  </el-form-item>
 
-                <!-- <el-form-item label="活动时间" prop="date1">
-                    <el-date-picker type="date" placeholder="选择日期" v-model="form2.date1" style="width: 100%;"></el-date-picker>
-                </el-form-item>
-                <el-form-item label="是否" prop="delivery">
-                    <el-switch v-model="form2.delivery"></el-switch>
-                </el-form-item>
+                  <el-form-item label="肩宽测量" prop="mShoulderLength">
+                      <el-input type="number" min="30" v-model="measureInfo.mShoulderLength" placeholder=""></el-input>
+                  </el-form-item>
+                 <el-form-item label="肩宽成衣" prop="pShoulderLength">
+                      <el-input type="number" min="0" v-model="measureInfo.pShoulderLength" placeholder=""></el-input>
+                  </el-form-item>
 
-                <el-form-item label="多选按钮" prop="type">
-                    <el-checkbox-group v-model="form2.type">
-                        <el-checkbox label="美食/餐厅线上活动" name="type"></el-checkbox>
-                        <el-checkbox label="地推活动" name="type"></el-checkbox>
-                        <el-checkbox label="线下主题活动" name="type"></el-checkbox>
-                        <el-checkbox label="单纯品牌曝光" name="type"></el-checkbox>
-                    </el-checkbox-group>
-                </el-form-item>
-                <el-form-item label="单选按钮" prop="suitSize">
-                    <el-radio-group v-model="suit_style.suitSize">
-                        <el-radio label="线上品牌商赞助"></el-radio>
-                        <el-radio label="线下场地免费"></el-radio>
-                    </el-radio-group>
-                </el-form-item>
-                <el-form-item label="文本域" prop="desc">
-                    <el-input type="textarea" v-model="form2.desc"></el-input>
-                </el-form-item> -->
-                <el-form-item label=" ">
-                    <el-button type="primary" @click="onSubmit2">查询</el-button>
-                </el-form-item>
+                  <el-form-item label="衣长测量" prop="mCoatLength">
+                      <el-input type="number" min="30" v-model="measureInfo.mCoatLength" placeholder=""></el-input>
+                  </el-form-item>
+                 <el-form-item label="衣长成衣" prop="pCoatLength">
+                      <el-input type="number" min="0" v-model="measureInfo.pCoatLength" placeholder=""></el-input>
+                  </el-form-item>
+
+                  <el-form-item label="长袖长测量" prop="mSleeveLength">
+                      <el-input type="number" min="30" v-model="measureInfo.mSleeveLength" placeholder=""></el-input>
+                  </el-form-item>
+                 <el-form-item label="长袖长成衣" prop="pSleeveLength">
+                      <el-input type="number" min="0" v-model="measureInfo.pSleeveLength" placeholder=""></el-input>
+                  </el-form-item>
+
+                  <el-form-item label="臂围测量" prop="mArm">
+                      <el-input type="number" min="30" v-model="measureInfo.mArm" placeholder=""></el-input>
+                  </el-form-item>
+                 <el-form-item label="臂围成衣" prop="pArm">
+                      <el-input type="number" min="0" v-model="measureInfo.pArm" placeholder=""></el-input>
+                  </el-form-item>
+
+                  <el-form-item label="中臂围测量" prop="mMiddleArm">
+                      <el-input type="number" min="30" v-model="measureInfo.mMiddleArm" placeholder=""></el-input>
+                  </el-form-item>
+                 <el-form-item label="中臂围成衣" prop="pMiddleArm">
+                      <el-input type="number" min="0" v-model="measureInfo.pMiddleArm" placeholder=""></el-input>
+                  </el-form-item>
+
+                  <el-form-item label="腕围测量" prop="mWrist">
+                      <el-input type="number" min="30" v-model="measureInfo.mWrist" placeholder=""></el-input>
+                  </el-form-item>
+                 <el-form-item label="腕围成衣" prop="pWrist">
+                      <el-input type="number" min="0" v-model="measureInfo.pWrist" placeholder=""></el-input>
+                  </el-form-item>
+
+                  <el-form-item label="" style="display:block;text-align: center;">
+                      <el-button type="primary" @click="onSubmit3">查询</el-button>
+                  </el-form-item>
+
             </el-form>
+
+
         </div>
         <!-- 查询区----end -->
     </div>
@@ -151,6 +128,17 @@ export default {
   name: "searchinput",
   data() {
     return {
+      form1: {
+        //表单对象
+        name: "",
+        region: "",
+        date1: "",
+        date2: "",
+        delivery: false,
+        type: [],
+        resource: "",
+        desc: ""
+      },
       form2: {
         //表单对象
         name: "",
@@ -224,7 +212,7 @@ export default {
         address: null,
       },
       labelPosition: "right", //lable对齐方式
-      labelWidth: "80px", //lable宽度
+      labelWidth: "100px", //lable宽度
       rules: {
         name: [
           { required: true, message: "请输入活动名称", trigger: "blur" },
@@ -232,35 +220,43 @@ export default {
         ],
         amount: [{ required: true, message: "请输入金额", trigger: "blur" }],
 
-        suitType: [{ required: true, message: "请输入衬衫面料", trigger: "blur" }],
-        processSeletion: [{ required: true, message: "请输入衬衫规格", trigger: "blur" }],
-        collarType: [
-          { required: true, message: "请选择领型", trigger: "change" }
-        ],
-        cuffType: [
-          { required: true, message: "请选择袖型", trigger: "change" }
-        ],
-        topFly: [
-          { required: true, message: "请选择门襟", trigger: "change" }
-        ],
-        Hem: [
-          { required: true, message: "请选择下摆", trigger: "change" }
-        ],
-        collectSuit: [
-          { required: true, message: "请选择收省", trigger: "change" }
-        ],
-        collarColor: [
-          { required: true, message: "请选择领口颜色", trigger: "change" }
-        ],
-        isPocket: [
-          { required: true, message: "请选择口袋", trigger: "change" }
-        ],
-        fastenerType: [
-          { required: true, message: "请选择纽扣", trigger: "change" }
-        ],
-        fastenerColor: [
-          { required: true, message: "请选择纽扣颜色", trigger: "change" }
-        ],
+        mNeck: [{ required: true, message: "请输入尺寸", trigger: "blur" }],
+        pNeck: [{ required: true, message: "请输入尺寸", trigger: "blur" }],
+
+        mBust: [{ required: true, message: "请输入尺寸", trigger: "blur" }],
+        pBust: [{ required: true, message: "请输入尺寸", trigger: "blur" }],
+
+        mWaist: [{ required: true, message: "请输入尺寸", trigger: "blur" }],
+        pWaist: [{ required: true, message: "请输入尺寸", trigger: "blur" }],
+
+        mBelly: [{ required: true, message: "请输入尺寸", trigger: "blur" }],
+        pBelly: [{ required: true, message: "请输入尺寸", trigger: "blur" }],
+
+
+        mHipline: [{ required: true, message: "请输入尺寸", trigger: "blur" }],
+        pHipline: [{ required: true, message: "请输入尺寸", trigger: "blur" }],
+
+        mShoulderLength: [{ required: true, message: "请输入尺寸", trigger: "blur" }],
+        pShoulderLength: [{ required: true, message: "请输入尺寸", trigger: "blur" }],
+
+        mCoatLength: [{ required: true, message: "请输入尺寸", trigger: "blur" }],
+        pCoatLength: [{ required: true, message: "请输入尺寸", trigger: "blur" }],
+
+        mSleeveLength: [{ required: true, message: "请输入尺寸", trigger: "blur" }],
+        pSleeveLength: [{ required: true, message: "请输入尺寸", trigger: "blur" }],
+
+        mArm: [{ required: true, message: "请输入尺寸", trigger: "blur" }],
+        pArm: [{ required: true, message: "请输入尺寸", trigger: "blur" }],
+
+        mMiddleArm: [{ required: true, message: "请输入尺寸", trigger: "blur" }],
+        pMiddleArm: [{ required: true, message: "请输入尺寸", trigger: "blur" }],
+
+        mWrist: [{ required: true, message: "请输入尺寸", trigger: "blur" }],
+        pWrist: [{ required: true, message: "请输入尺寸", trigger: "blur" }],
+
+
+
+
 
         date1: [
           {

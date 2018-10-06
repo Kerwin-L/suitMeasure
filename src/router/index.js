@@ -65,6 +65,15 @@ const router = new VueRouter({
       }
         ,
       {
+        name: 'measureInfo',
+        path: '/measureInfo',
+        component: resolve => require(['@/components/formpage/measureInfo.vue'], resolve),
+        meta: {
+          title: '表单页2'
+        }
+      }
+        ,
+      {
         name: 'treepage',
         path: '/treepage',
         component: resolve => require(['@/components/treepage/treepage.vue'], resolve),
