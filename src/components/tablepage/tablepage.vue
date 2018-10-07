@@ -120,6 +120,14 @@
 .el-form-item__content {
     width: 220px;
 }
+.suit_style {
+  .el-form-item__content {
+    width: 430px;
+    .el-select {
+      width: 430px;
+    }
+  }
+}
 </style>
 
 <script>

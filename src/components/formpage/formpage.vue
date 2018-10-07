@@ -103,7 +103,7 @@
                     <el-input type="textarea" v-model="form2.desc"></el-input>
                 </el-form-item> -->
                 <el-form-item label=" ">
-                    <el-button type="primary" @click="onSubmit2">查询</el-button>
+                    <el-button type="primary" @click="onSubmit2" >查询</el-button>
                 </el-form-item>
             </el-form>
         </div>
@@ -311,6 +311,8 @@ export default {
               //   });
             }
           });
+          this.$emit('changeTab',1);
+          console.log('setTab success');
         } else {
           console.log("error submit!!");
           return false;
@@ -322,6 +324,10 @@ export default {
         type: "success",
         message: "表单提交成功"
       });
+    },
+    setTab(){
+      this.$emit('changeTab','second');
+      console.log('setTab success');
     }
   }
 };

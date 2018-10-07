@@ -2,84 +2,52 @@
     <div>
       纵向双列表单:
             <!-- 查询区----start -->
-            <div class="container" style="width: 660px;">
-                <el-form :label-position="labelPosition" :rules="rules" :label-width="labelWidth" :inline="true" :model="measureInfo" class="demo-form-inline">
+            <div class="container suit_style">
+                <el-form :label-position="labelPosition" :rules="rules" ref="measureInfo" :label-width="labelWidth" :inline="false" :model="measureInfo" class="demo-form-inline">
                   <el-form-item label="领围测量" prop="mNeck">
                       <el-input type="number" min="30"  v-model="measureInfo.mNeck" placeholder="范围30-60"></el-input>
-                  </el-form-item>
-                 <el-form-item label="领围成衣" prop="pNeck">
-                      <el-input type="number" min="30"  v-model="measureInfo.pNeck" placeholder=""></el-input>
                   </el-form-item>
 
                   <el-form-item label="胸围测量" prop="mBust">
                       <el-input type="number" min="30"  v-model="measureInfo.mBust" placeholder=""></el-input>
                   </el-form-item>
-                 <el-form-item label="胸围成衣" prop="pBust">
-                      <el-input type="number" min="0" v-model="measureInfo.pBust" placeholder=""></el-input>
-                  </el-form-item>
 
                   <el-form-item label="腰围测量" prop="mWaist">
                       <el-input type="number" min="30" v-model="measureInfo.mWaist" placeholder=""></el-input>
-                  </el-form-item>
-                 <el-form-item label="腰围成衣" prop="pWaist">
-                      <el-input type="number" min="0" v-model="measureInfo.pWaist" placeholder=""></el-input>
                   </el-form-item>
 
                   <el-form-item label="肚围测量" prop="mBelly">
                       <el-input type="number" min="30" v-model="measureInfo.mBelly" placeholder=""></el-input>
                   </el-form-item>
-                 <el-form-item label="肚围成衣" prop="pBelly">
-                      <el-input type="number" min="0" v-model="measureInfo.pBelly" placeholder=""></el-input>
-                  </el-form-item>
 
                   <el-form-item label="臀围测量" prop="mHipline">
                       <el-input type="number" min="30" v-model="measureInfo.mHipline" placeholder=""></el-input>
-                  </el-form-item>
-                 <el-form-item label="臀围成衣" prop="pHipline">
-                      <el-input type="number" min="0" v-model="measureInfo.pHipline" placeholder=""></el-input>
                   </el-form-item>
 
                   <el-form-item label="肩宽测量" prop="mShoulderLength">
                       <el-input type="number" min="30" v-model="measureInfo.mShoulderLength" placeholder=""></el-input>
                   </el-form-item>
-                 <el-form-item label="肩宽成衣" prop="pShoulderLength">
-                      <el-input type="number" min="0" v-model="measureInfo.pShoulderLength" placeholder=""></el-input>
-                  </el-form-item>
 
                   <el-form-item label="衣长测量" prop="mCoatLength">
                       <el-input type="number" min="30" v-model="measureInfo.mCoatLength" placeholder=""></el-input>
-                  </el-form-item>
-                 <el-form-item label="衣长成衣" prop="pCoatLength">
-                      <el-input type="number" min="0" v-model="measureInfo.pCoatLength" placeholder=""></el-input>
                   </el-form-item>
 
                   <el-form-item label="长袖长测量" prop="mSleeveLength">
                       <el-input type="number" min="30" v-model="measureInfo.mSleeveLength" placeholder=""></el-input>
                   </el-form-item>
-                 <el-form-item label="长袖长成衣" prop="pSleeveLength">
-                      <el-input type="number" min="0" v-model="measureInfo.pSleeveLength" placeholder=""></el-input>
-                  </el-form-item>
 
                   <el-form-item label="臂围测量" prop="mArm">
                       <el-input type="number" min="30" v-model="measureInfo.mArm" placeholder=""></el-input>
-                  </el-form-item>
-                 <el-form-item label="臂围成衣" prop="pArm">
-                      <el-input type="number" min="0" v-model="measureInfo.pArm" placeholder=""></el-input>
                   </el-form-item>
 
                   <el-form-item label="中臂围测量" prop="mMiddleArm">
                       <el-input type="number" min="30" v-model="measureInfo.mMiddleArm" placeholder=""></el-input>
                   </el-form-item>
-                 <el-form-item label="中臂围成衣" prop="pMiddleArm">
-                      <el-input type="number" min="0" v-model="measureInfo.pMiddleArm" placeholder=""></el-input>
-                  </el-form-item>
 
                   <el-form-item label="腕围测量" prop="mWrist">
                       <el-input type="number" min="30" v-model="measureInfo.mWrist" placeholder=""></el-input>
                   </el-form-item>
-                 <el-form-item label="腕围成衣" prop="pWrist">
-                      <el-input type="number" min="0" v-model="measureInfo.pWrist" placeholder=""></el-input>
-                  </el-form-item>
+
 
                   <el-form-item label="" style="display:block;text-align: center;">
                       <el-button type="primary" @click="onSubmit3">查询</el-button>
